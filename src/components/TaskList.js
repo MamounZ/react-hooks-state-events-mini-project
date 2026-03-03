@@ -1,9 +1,11 @@
 import React from "react";
+import Task from "./Task.js";
 
-function TaskList() {
+
+function TaskList({visibleTasks, handelDeleteTask}) {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {visibleTasks.map(task => <Task key={task.text} task={task} handelDeleteTask={handelDeleteTask}/>)}
     </div>
   );
 }
